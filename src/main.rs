@@ -6,13 +6,16 @@ fn main() {
     shadowing();
     numerical_operations();
     tuple();
+    control_flow();
 }
 
 fn message() -> String {
+    println!("-----PRINTING----");
     String::from("Hello, world!")
 }
 
 fn shadowing() {
+    println!("-----SHADOWING----");
     let x = 5;
 
     let x = x + 1;
@@ -31,6 +34,7 @@ fn shadowing() {
 }
 
 fn numerical_operations() {
+    println!("-----NUMERICAL OPERATIONS----");
     // addition
     let sum = 5 + 10;
     println!("Sum: {}", sum);
@@ -56,10 +60,38 @@ fn numerical_operations() {
 }
 
 fn tuple() {
+    println!("-----TUPLE----");
     let tup = (500, 6.4, 1);
     let (x, y, z) = tup;
 
     println!("The value of x is: {}, y is: {} and z is: {}", x, y, z);
 
     println!("The value of 0 is: {}, 1 is: {} and 2 is: {}", tup.0, tup.1, tup.2);
+}
+
+fn control_flow() {
+    println!("-----CONTROL FLOW----");
+    let number = 3;
+
+    if number < 5 {
+        println!("Number less than 5");
+    } else {
+        println!("Number larger than 5");
+    }
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    } else if number % 2 == 0 {
+        println!("number is divisible by 2");
+    } else {
+        println!("number is not divisible by 4, 3, or 2");
+    }
+
+    let condition = true;
+    // SHADOWING
+    let number = if condition { 5 } else { 6 };
+
+    println!("The value of number is: {}", number);
 }
